@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Callback</title>
+</head>
+<body>
+  <h2>Authorizing...</h2>
+  <script>
+    const code = new URLSearchParams(window.location.search).get("code");
+
+    fetch("http://localhost:3001/get-token", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code })
+    })
+    .then(res => res.json())
+    .then(data => {
+      localStorage.setItem("access_token", data.access_token);
+      // Optional: store refresh_token if you get it
+      window.location.href = "player.html"; // Redirect to music player
+    })
+    .catch(err => {
+      console.error("Failed to get token", err);
+    });
+  </script>
+</body>
+</html>

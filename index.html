@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- 🔐 Login with Spotify -->
+  <button id="login-btn">Login with Spotify</button>
+
+  <!-- 🎵 Player UI -->
   <div class="player">
     <img src="assets/cover.jpg" alt="Cover" class="cover" />
     <h2 id="title">Song Title</h2>
@@ -24,6 +29,27 @@
     </ul>
   </div>
 
+  <!-- 🧠 Login Script -->
+  <script>
+    const clientId = "your_real_client_id_here"; // ✅ Replace with actual client ID
+    const redirectUri = "http://localhost:5500/callback";
+    const scopes = [
+      "user-read-private",
+      "user-read-email",
+      "playlist-read-private",
+      "playlist-read-collaborative"
+    ];
+
+    document.getElementById("login-btn").addEventListener("click", () => {
+      window.location.href =
+        `https://accounts.spotify.com/authorize?client_id=${clientId}` +
+        `&response_type=code` +
+        `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+        `&scope=${scopes.join('%20')}`;
+    });
+  </script>
+
+  <!-- 🎧 Audio Logic (optional, only if using local songs) -->
   <script src="script.js"></script>
 </body>
 </html>

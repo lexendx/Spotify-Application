@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="player">
+    <h2>Your Spotify Playlists</h2>
+    <ul id="playlist"></ul>
+  </div>
+
+  <script>
+    const token = localStorage.getItem("access_token");
+
+    if (!token) {
+      alert("No access token found. Redirecting to login...");
+      window.location.href = "index.html";
+    }
+
+    fetch("https://api.spotify.com/v1/me/playlists", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById("playlist");
+      data.items.forEach(playlist => {
+        const li = document.createElement("li");
+        li.textContent = playlist.name;
+        list.appendChild(li);
+      });
+    })
+    .catch(err => {
+      console.error("Failed to fetch playlists:", err);
+    });
+  </script>
+</body>
+</html>
