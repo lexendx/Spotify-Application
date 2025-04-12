@@ -1,73 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-body{
-    background-color: antiquewhite;
-
-}
-
-*{
-    margin: 0;
-    padding: 0;
-}
-nav{
-    font-family: 'Ubantu', sans-serif;
-
-
-}
-nav ul{
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #fff;
     display: flex;
     align-items: center;
-    list-style-type: none ;
-    height: 65px;
-    background-color: black;
-    color: aliceblue;
-}
-nav ul li{
-    padding: 0 12px;
-}
-.brand img{
-    width: 44px;
-    padding: 0 8px ;
-}
-.brand{
-    display: flex;
-    align-items: center;
-    font-weight: bolder;
-    font-size: 1.3rem;
-}
-.container{
-    min-height: 72vh;
-    background-color: black;
-    color: white;
-    font-family: 'Varela Round', sans-serif;;
-    display: flex;
-    width: 70%;
-    margin: 23px auto;
-    border-radius: 12px;
-    padding: 34px;
-    background-image: url(download.jpg);
-
-}
-.Bottom{
-    position: sticky;
-    height: 130px;
-    background-color: black;
-    color: white;
-    Bottom: 0;
-    display:flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-}
-.icons{
-    margin-top: 14px;
-}
-.icons i{
-    cursor: pointer;
-
-}
-#myProgressBar{
-    width: 80vw;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .player {
+    background: #1db954;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
     text-align: center;
-}
+  }
+  
+  .cover {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .controls {
+    margin: 1rem 0;
+  }
+  
+  .controls button {
+    background: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  #playlist {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #playlist li {
+    cursor: pointer;
+    padding: 5px 0;
+  }
+  
+  #playlist li:hover {
+    text-decoration: underline;
+  }
+  

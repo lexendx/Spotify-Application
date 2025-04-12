@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify your fav music is here</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav>
-        <ul>
-            <li class="brand"><img src="spotify-1759471_1920.jpg" alt="Spotify">Spotify</li>
-            <li>Home</li>
-            <li>About</li>
-            
-        </ul>
-       
+  <div class="player">
+    <img src="assets/cover.jpg" alt="Cover" class="cover" />
+    <h2 id="title">Song Title</h2>
+    <audio id="audio" src="assets/song1.mp3"></audio>
 
-    </nav>
-    <div class="container">
-        <h1>Best of NCS - No Copyright Sounds</h1>
-        <div>
-            <div class="songItem">
-                <img src=""
-            </div>
-        </div>
-        <div class="songlist"></div>
-        <div class="SongBanner"></div>
+    <div class="controls">
+      <button id="prev">⏮</button>
+      <button id="play">▶️</button>
+      <button id="next">⏭</button>
     </div>
-        
-        <div class="Bottom">
-            <input type="range" name="range" id="myProgressBar" min="0" max="100">
-            <div class="icons">
-                <!--fontawesome icons-->
-                <i class="far fa-2x fa-step-backward"></i>
-                <i class="far fa-3x fa-play-circle"></i>
-                <i class="far fa-3x fa-fast-forward"></i>
-            </div>
 
-        </div>
+    <ul id="playlist">
+      <li data-src="assets/song1.mp3">🎵 Song 1</li>
+      <li data-src="assets/song2.mp3">🎶 Song 2</li>
+    </ul>
+  </div>
 
-<script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    
+  <script src="script.js"></script>
 </body>
 </html>
